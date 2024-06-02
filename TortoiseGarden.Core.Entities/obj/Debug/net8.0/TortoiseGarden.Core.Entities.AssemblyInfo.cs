@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TortoiseGarden.Core.Entities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91a15fe34a0e0be41d053478e920222b8256a97c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TortoiseGarden.Core.Entities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TortoiseGarden.Core.Entities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
