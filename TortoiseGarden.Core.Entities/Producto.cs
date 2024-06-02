@@ -20,12 +20,19 @@ namespace TortoiseGarden.Core.Entities
             Habilitado = habilitado;
         }
 
+        public Producto(string nombre, int categoriaId, bool habilitado)
+        {
+            Nombre = nombre;
+            CategoriaId = categoriaId;
+            Habilitado = habilitado;
+        }
+
         public override string ToString()
         {
             return 
                 $" id: {ProductoId} " +
                 $" name: {Nombre} " +
-                $" idCat: {CategoriaId} " +
+                $" idCategoria: {CategoriaId} " +
                 $" habilitado: {Habilitado}";
 
         }

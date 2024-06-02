@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HbFNG10q/4emb3FNzQ9Uy4dwGmQxb3v62EbEO7FSsAgfMzR49sM/ZXgzvksoH3NtoIqdpYTXBVHXo7cy+w1fcg==",
+  "dgSpecHash": "wQ+BjNz6/cJXReKvkWuK6T76qS35ACgtHRRaOWuGRb7awbkI93rNWmD2TXX9EqgR2rZ8CRfBGDNB/l239zlilg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Console\\TortoiseGarden.Console.csproj",
+  "projectFilePath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Console\\TortoiseGarden.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\irina\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\irina\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

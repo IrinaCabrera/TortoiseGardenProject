@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj": {}
+    "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj": {
+    "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj",
+        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj",
         "projectName": "TortoiseGarden.Core.Business",
-        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj",
+        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Business\\TortoiseGarden.Core.Business.csproj",
         "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Business\\obj\\",
+        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj": {
-                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj"
+              "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj": {
+                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj"
               },
-              "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
-                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj"
+              "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
+                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj": {
+    "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj",
+        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj",
         "projectName": "TortoiseGarden.Core.Data",
-        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj",
+        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\TortoiseGarden.Core.Data.csproj",
         "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Data\\obj\\",
+        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
-                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj"
+              "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
+                "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj"
               }
             }
           }
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
+    "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
         "projectName": "TortoiseGarden.Core.Entities",
-        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
+        "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
         "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\obj\\",
+        "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",

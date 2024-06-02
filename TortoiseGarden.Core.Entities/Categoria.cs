@@ -16,5 +16,12 @@ namespace TortoiseGarden.Core.Entities
 
         public string Nombre { get; set; }
 
+
+        public override string ToString()
+        {
+            return
+                $"CategoriaId: {CategoriaId}  " +
+                $"Nombre: {Nombre}";
+        }
     }
 }
