@@ -28,7 +28,7 @@ namespace TortoiseGarden.Core.Business
             {
                 return data.ObtenerPorId(condicion);  
             }
-            catch (Exception ex)
+            catch 
             {
 
                 return data.ObtenerPorNombre(condicion);
@@ -43,6 +43,16 @@ namespace TortoiseGarden.Core.Business
         public void CrearProducto(Producto p)
         {
             data.crearProducto(p);
+        }
+
+        public void EliminarProducto(Producto p)
+        {
+            data.EliminarProducto(p);
+        }
+
+        public void ModificarProducto(int id, Producto pNuevo)
+        {
+            data.ModificarProducto( id, pNuevo);
         }
     }
 }

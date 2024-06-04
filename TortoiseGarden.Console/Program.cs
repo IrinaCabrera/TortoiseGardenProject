@@ -38,9 +38,6 @@ var productoEspecificoNombre = business.obtenerProductoEspecifico("Cesped");
 //var productoEspecificoIDerror = business.obtenerProductoEspecifico(100);
 //var productoEspecificoNombreerror = business.obtenerProductoEspecifico("C");
 
-
-/*crear producto*/
-/*muestro categorias*/
 /*
 var categorias = business.obtenerCategoria();
 foreach (var categoria in categorias)
@@ -70,4 +67,33 @@ else//si? entonces mensaje
 Console.WriteLine(productoEspecificoNombre);
 */
 
+/*
+ Eliminar producto
+
+Producto pA = new Producto("irina", 1 , true);
+
+
+var busqueda = business.obtenerProductoEspecifico(pA.Nombre);
+var p = new Producto(busqueda.ProductoId,busqueda.Nombre, busqueda.CategoriaId, busqueda.Habilitado);
+
+if (busqueda != null)
+{
+    business.EliminarProducto(p);
+}
+
+if(business.obtenerProductoEspecifico(p.ProductoId) == null) {
+    Console.WriteLine("eliminado.");
+
+}
+ */
+
+/*modificacion de producto*/
+/*
+
+Producto pNuevo = new Producto("Casa Cueva A", 3, true);
+int id = 38;
+
+business.ModificarProducto(id, pNuevo);
+
+*/
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System;
 using TortoiseGarden.Core.Entities;
 
 namespace TortoiseGarden.Core.Data
@@ -106,6 +107,32 @@ namespace TortoiseGarden.Core.Data
             {
                 db.Productos.Add(p);
                 db.SaveChanges();
+            }
+        }
+
+
+        public void EliminarProducto(Producto productoAEliminar)
+        {
+            using (var bd = new TortoiseGardenContext())
+            {
+                bd.Productos.Remove(productoAEliminar);
+                bd.SaveChanges();
+            }
+        }
+
+        
+        public void ModificarProducto(int id,Producto pNuevo)
+        {
+            using (var bd = new TortoiseGardenContext())
+            {
+                //busco
+                var pModificable = bd.Productos.SingleOrDefault(p => p.ProductoId == id);
+
+                pModificable.Nombre = pNuevo.Nombre;
+                pModificable.CategoriaId = pNuevo.CategoriaId;
+                pModificable.Habilitado = pNuevo.Habilitado;
+
+                bd.SaveChanges();
             }
         }
     }
