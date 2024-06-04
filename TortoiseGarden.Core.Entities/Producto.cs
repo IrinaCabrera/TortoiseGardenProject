@@ -30,10 +30,10 @@ namespace TortoiseGarden.Core.Entities
         public override string ToString()
         {
             return 
-                $" id: {ProductoId} " +
+                $"id: {ProductoId} " +
                 $" name: {Nombre} " +
                 $" idCategoria: {CategoriaId} " +
-                $" habilitado: {Habilitado}";
+                $" habilitado: {Habilitado}\n";
 
         }
 

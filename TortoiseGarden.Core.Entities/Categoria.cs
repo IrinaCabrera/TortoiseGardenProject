@@ -21,7 +21,7 @@ namespace TortoiseGarden.Core.Entities
         {
             return
                 $"CategoriaId: {CategoriaId}  " +
-                $"Nombre: {Nombre}";
+                $"Nombre: {Nombre}\n";
         }
     }
 }

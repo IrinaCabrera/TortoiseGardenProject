@@ -17,21 +17,22 @@ namespace TortoiseGarden.Core.Business
         }
 
         //info completa
-        public List<object[]> obtenerProductosModificables()
+        public List<object[]> ObtenerProductosConInformacionCompleta()
         {
-            return data.obtenerProductosModificables();
+            return data.ObtenerProductosConInformacionCompleta();
         }
 
-        public Producto obtenerProductoEspecifico(dynamic condicion)
+        public Producto obtenerProductoEspecifico(string condicion)
         {
-            try
+            
+            if(int.TryParse(condicion, out int productoId))
             {
-                return data.ObtenerPorId(condicion);  
+                
+                return data.ObtenerPorId(productoId);  
             }
-            catch 
+            else 
             {
-
-                return data.ObtenerPorNombre(condicion);
+                return data.ObtenerPorNombre(condicion.Trim());
             }
         }
 
