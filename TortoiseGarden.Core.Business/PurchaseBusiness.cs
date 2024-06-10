@@ -10,5 +10,15 @@ namespace TortoiseGarden.Core.Business
 {
     public class PurchaseBusiness
     {
+        public readonly PurchaseRepository sr;
+        public PurchaseBusiness()
+        {
+            sr = new PurchaseRepository();
+        }
+
+        public List<object[]> ObtenerCompras()
+        {
+            return sr.ObtenerCompras();
+        }
     }
 }

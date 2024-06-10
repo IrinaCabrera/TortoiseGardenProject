@@ -37,8 +37,12 @@ namespace TortoiseGarden.Core.Data
                 foreach (var item in query)
                 {
                     ventas.Add(
-                        [item.vVentaId, item.vFecha, item.vNombreProducto,
-                        item.vCantidad, item.vUsuarioId, item.vNombreUsuario]
+                            [item.vVentaId, 
+                            item.vFecha, 
+                            item.vNombreProducto,
+                            item.vCantidad, 
+                            item.vUsuarioId, 
+                            item.vNombreUsuario]
                     );
                 }
                 return ventas;

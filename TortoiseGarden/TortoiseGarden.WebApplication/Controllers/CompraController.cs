@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TortoiseGarden.Core.Business;
 
 namespace TortoiseGarden.WebApplication.Controllers
 {
@@ -7,6 +8,14 @@ namespace TortoiseGarden.WebApplication.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult ObtenerCompras()
+        {
+            List<object[]> compras = new List<object[]>();
+            compras = new PurchaseBusiness().ObtenerCompras();
+
+            return Json(compras);
         }
     }
 }
