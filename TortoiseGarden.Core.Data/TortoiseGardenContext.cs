@@ -15,6 +15,9 @@ namespace TortoiseGarden.Core.Data
 
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
