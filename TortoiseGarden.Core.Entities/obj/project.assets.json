@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
       "projectName": "TortoiseGarden.Core.Entities",
-      "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
+      "projectPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
       "packagesPath": "C:\\Users\\irina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\obj\\",
+      "outputPath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\irina\\AppData\\Roaming\\NuGet\\NuGet.Config",

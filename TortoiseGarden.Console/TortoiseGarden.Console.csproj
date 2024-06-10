@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TortoiseGarden.Core.Business\TortoiseGarden.Core.Business.csproj" />
+    <ProjectReference Include="..\TortoiseGarden.Core.Entities\TortoiseGarden.Core.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

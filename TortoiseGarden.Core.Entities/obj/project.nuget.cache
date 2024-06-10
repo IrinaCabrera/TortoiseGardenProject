@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CeHt5ZTfta8DLcIP7OUw0aAlf75pRSD2yStmp6RH3vAk7ifBxrNDO/1IaUZUb3+WJtD+eBYjRgscnskmNXNOzg==",
+  "dgSpecHash": "84iVY5N64j+a76vqh5PzU7dxj4HT1QHHPHZC+T0+BB9+k1eK9s15+tR/BytFNKYY1fEhV1iMyxAZN0tAF+khew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProyect\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
+  "projectFilePath": "C:\\Users\\irina\\Desktop\\TortoiseGardenProject\\TortoiseGarden.Core.Entities\\TortoiseGarden.Core.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
