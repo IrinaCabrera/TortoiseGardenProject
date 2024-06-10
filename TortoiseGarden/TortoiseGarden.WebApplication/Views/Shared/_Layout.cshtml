@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TortoiseGarden</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TortoiseGarden.styles.css" asp-append-version="true" />
+</head>
+    <body>
+        <div class="grid-container">
+            <header class="header">
+                <a class="icon-container" href="#">
+                    <img src="../Media/TortoiseGARDEN_white-removebg-preview.png" alt="Icono">
+                </a>
+                <div class="opacity"></div>
+            </header>
+            <nav class="navPrimary">
+                <ul>
+                    <li class="navPrimary-button">
+                        <a>VENTA</a>
+                    </li>
+                    <li class="navPrimary-button">
+                        <a>COMPRA</a>
+                    </li>
+                </ul>
+            </nav>
+            @RenderBody()
+            <footer class="footer">
+                <p><strong>&copy;</strong> 2024 Cabrera Irina. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </body>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</html>

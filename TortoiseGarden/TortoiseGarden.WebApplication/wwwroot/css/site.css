@@ -1,0 +1,157 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("../Media/chelonoidischilensis.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navPrimary-button {
+    display: inline-block;
+    color: black;
+    padding: 0.5em 5em;   
+}
+
+.navSec-button {
+    color: white;
+    padding: 10px 1px;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 15% 6% 1fr 6%;
+    grid-template-columns: 14% 1fr;
+    grid-template-areas:
+        "header header"
+        "navPrimary navPrimary"
+        "navSec content"
+        "footer footer";
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    grid-area: header;
+    background-image: url("../Media/HabitatChelonoidisChilensisImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(244, 220, 182, 0.5);/*dulce de leche*/
+    background-color: rgba(139, 151, 97, 0.4);
+}
+
+
+.icon-container {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    height: 90%;
+    z-index:2;
+}
+
+.icon-container img {
+    max-width: 100%; 
+    max-height: 100%; 
+}
+.navSec {
+    display: flex;
+    background-color: #909E7D;
+    grid-area: navSec;
+    justify-content: center;
+    text-align:center;
+}
+
+.navPrimary {
+    display: flex;
+    background-color: #E1DCBF;
+    grid-area: navPrimary;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background-color: rgba(244, 220, 182, 0.5); /*dulce de leche*/
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    background-color: darkolivegreen;
+    grid-area: footer;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .icon-container {
+        width: 30%;
+        height: 90%;
+    }
+    .grid-container {
+        grid-template-rows: 15% 6% 7% 1fr 6%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "navPrimary"
+            "navSec"
+            "content"
+            "footer";
+    }
+
+    .navSec-button {
+        display: inline;
+        padding: 0em 1em;
+        
+    }
+    .navSec {
+        align-items: center;
+    }
+
+    .navPrimary-button {
+        padding: 1em 1em;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

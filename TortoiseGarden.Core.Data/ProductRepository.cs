@@ -9,7 +9,7 @@ namespace TortoiseGarden.Core.Data
     {
 
 
-        //obtener productos con categoria y sus respectivos id, ayudara apra la modificacion
+        //obtener productos con categoria y sus respectivos id, ayudara para la modificacion
         public List<object[]> ObtenerProductosConInformacionCompleta()
         {
             List<object[]> productos = new List<object[]>();
