@@ -38,11 +38,24 @@ a {
     color: black;
     padding: 0.5em 5em;   
 }
+.navPrimary-button a:link, 
+.navPrimary-button a:visited, 
+.navPrimary-button a:active {
+
+    color: black;
+}
+
 
 .navSec-button {
     color: white;
     padding: 10px 1px;
     margin-top: 20px;
+}
+
+.navSec-button a:link,
+.navSec-button a:visited,
+.navSec-button a:active {
+    color: white;
 }
 
 .grid-container {
