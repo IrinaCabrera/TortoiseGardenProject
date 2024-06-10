@@ -10,5 +10,16 @@ namespace TortoiseGarden.Core.Business
 {
     public class SaleBusiness
     {
+        public readonly SaleRepository sr;
+        public SaleBusiness() {
+            sr = new SaleRepository();
+        }
+
+        public List<object[]> ObtenerVentas()
+        {
+            return sr.ObtenerVentas();
+        }
+
+
     }
 }
