@@ -1,0 +1,56 @@
+﻿h1 {
+    color: darkslategrey;
+    display:fixed;
+}
+
+.container {
+    max-width: 900px;
+    max-height: 400px;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px dotted white;
+    overflow-y: auto;
+    visibility:hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    padding: 10px;
+    overflow-y:hidden;
+}
+thead,
+th{
+    padding:10px;
+}
+thead {
+    color: darkslategrey;
+    background-color: rgba(222, 184, 135, 0.7);
+}
+
+td{
+    padding:5px;
+}
+td,
+th{
+    border:1px solid white;
+}
+tbody {
+    background-color: rgba(250, 235, 215, 0.7);
+}
+
+@media (max-width: 650px) {
+    .container {
+        max-width: 450px;
+        max-height: 400px;
+        
+    }
+}
+@media (max-width: 450px) {
+    .container {
+        max-width: 300px;
+        max-height: 400px;
+    }
+}
