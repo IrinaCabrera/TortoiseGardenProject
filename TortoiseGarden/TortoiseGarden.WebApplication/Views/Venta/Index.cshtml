@@ -3,7 +3,10 @@
     ViewData["Title"] = "Venta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<link rel="stylesheet" href="~/css/tables.css"/>
+<script src="~/js/venta.js" defer>
+   
+</script>
 <nav class="navSec">
     <ul>
         <li class="navSec-button">
@@ -14,5 +17,23 @@
         </li>
     </ul>
 </nav>
-<div class ="content">VENTA</div>
-
+<div class ="content">
+     <div class ="container" >
+         <h1>Ventas</h1>
+        <table id="ventasTable">
+            <thead>
+                <tr>
+                    <th># Venta</th>
+                    <th>Fecha</th>
+                    <th>Nombre de Producto</th>
+                    <th>Cantidad</th>
+                    <th># Usuario</th>
+                    <th>Nombre de Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+</div>
