@@ -5,12 +5,28 @@
 }
 
 <div class="containerForm">
-    <div>
+    <div id ="ingresarUsuario">
         <label>Nombre de Usuario</label>
         <input type="text"/>
         <label>Constraseña</label>
         <input type="password"/>
-        <button class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
+        <div class="btn-container">
+            <button class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
+            <button class="btn-Registrarme"><a>Registrarme</a></button>
+        </div>
+    </div>
+
+    <div id ="registrarUsuario">
+        <label>Nombre de Usuario</label>
+        <input type="text"/>
+        <label>Constraseña</label>
+        <input type="password"/>
+        <label>Repetir Constraseña</label>
+        <input type="password"/>
+        <div class="btn-container">
+            <button class="btn-Cancelar"><a>Cancelar</a></button>
+            <button class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
+        </div>
     </div>
 </div>
 
