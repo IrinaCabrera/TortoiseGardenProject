@@ -18,9 +18,20 @@ namespace TortoiseGarden.Core.Data
                 db.SaveChanges();
             }
         }
-        public void ComprobarUsuario() { 
-        
-        
+        public int ObtenerIdUsuario(Usuario user) {
+            
+            using (var db = new TortoiseGardenContext())
+            {
+                var query = from u in db.Usuarios
+                             where u.Nombre == user.Nombre &&
+                                   u.Hash == user.Hash &&
+                                   u.Salt == user.Salt
+                             select u.UsuarioId;
+
+                    return query.FirstOrDefault();
+
+            }
+
         }
 
     }

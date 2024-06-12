@@ -12,22 +12,33 @@ namespace TortoiseGarden.Core.Business
     public class UserBusiness
     {
         public readonly UserRepository ur;
+
         public UserBusiness() {
             ur = new UserRepository();
         }
 
-        public void RegistrarUsuario(string password, string name)
+        public bool RegistrarUsuario(string password, string name)
         {
             HashHandler Hash = new HashHandler();
             var salt = Hash.GenerarSalt();
             var hashPass = Convert.ToBase64String(Hash.HashearClave(password, salt));
-            ur.RegistrarUsuario(new Usuario(name, hashPass, Convert.ToBase64String(salt)));
+            var user = new Usuario(name, hashPass, Convert.ToBase64String(salt));
+            ur.RegistrarUsuario(user);
+
+            if(ObtenerIdUsuario(user) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
-        public void ComprobarUsuario()
+
+        public int ObtenerIdUsuario(Usuario user)
         {
-
-
+            return ur.ObtenerIdUsuario(user);
         }
 
     }
