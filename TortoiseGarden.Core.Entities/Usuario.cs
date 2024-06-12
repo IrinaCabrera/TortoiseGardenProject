@@ -18,6 +18,12 @@ namespace TortoiseGarden.Core.Entities
         public string Hash { get; set; }
         public string Salt { get; set; }
 
+        public Usuario(string nombre, string hash, string salt)
+        {
+            Nombre = nombre;
+            Hash = hash;
+            Salt = salt;
+        }
         public Usuario(int usuarioId, string nombre, string hash, string salt)
         {
             UsuarioId = usuarioId;
