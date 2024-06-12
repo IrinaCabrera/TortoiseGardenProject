@@ -1,0 +1,65 @@
+﻿body {
+    background-image: url("../Media/chelochilensis.jpg");
+}
+
+.containerForm {
+    background-color: rgba(244, 220, 182, 0.3);
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+}
+
+.containerForm div {
+    width: 45%;
+    height: 45%;
+    border-radius: 15px;
+    border: 2px dotted white;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    margin-top: 80px;
+    background-color: rgba(250, 235, 215, 0.7);
+    color: darkslategrey;
+    
+}
+
+label {
+    margin-top: 5px;
+    
+}
+input {
+    border: 2px solid #909E7D;
+    margin: 5px 0px;
+    padding: 5px;
+    color: #404f45;
+    border-color: #909E7D;
+}
+input:focus {
+    border-color: darkolivegreen;
+    outline: none;
+}
+.btn-Aceptar {
+    margin: 10px 0px;
+    width: 100px;
+    align-self: end;
+    border: 1px solid lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow;
+    padding: 5px;
+}
+a{
+    text-decoration:none;
+}
+a:link,
+a:visited,
+a:active {
+    color: saddlebrown;
+}
+@media (max-width: 768px) {
+    .containerForm div {
+        width: 70%;
+        min-width:240px;
+        
+    }
+}

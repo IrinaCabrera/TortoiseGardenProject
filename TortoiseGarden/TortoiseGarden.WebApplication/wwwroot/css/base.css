@@ -1,0 +1,27 @@
+﻿html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../Media/chelonoidischilensis.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0px;
+    margin: 0px;
+}
