@@ -22,7 +22,6 @@ namespace TortoiseGarden.Core.Business
         }
         public byte[] HashearClave(string password, byte[] salt)
         {
-            //password = "junior";
             byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
             byte[] saltedPassword = new byte[passwordBytes.Length + salt.Length];
 

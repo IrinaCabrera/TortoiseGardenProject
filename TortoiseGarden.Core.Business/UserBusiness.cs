@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,6 @@ namespace TortoiseGarden.Core.Business
 
         public bool RegistrarUsuario(string pass, string name)
         {
-            //name = "irina1";
             HashHandler Hash = new HashHandler();
             var salt = Hash.GenerarSalt();
             var hashPass = Convert.ToBase64String(Hash.HashearClave(pass, salt));
@@ -36,10 +36,28 @@ namespace TortoiseGarden.Core.Business
             }
 
         }
-
         public int ObtenerIdUsuario(Usuario user)
         {
             return ur.ObtenerIdUsuario(user);
+        }
+
+        public bool AutenticarUsuario(string pass, string name)
+        {
+            bool seEncontro = false;
+            HashHandler Hash = new HashHandler();
+            List<string[]> infoUsr = ur.ObtenerHashSalUsuarios(name);
+            
+            foreach (var item in infoUsr)
+            {
+               var claveHasheada = Hash.HashearClave(pass, Encoding.UTF8.GetBytes(item[1]));
+                
+                if (Convert.ToBase64String(claveHasheada) == item[0])
+                {
+                    seEncontro = true;
+                }
+                break;
+            }
+            return seEncontro;
         }
 
     }
