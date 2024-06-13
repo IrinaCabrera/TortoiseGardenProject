@@ -24,9 +24,10 @@ namespace TortoiseGarden.WebApplication.Controllers
             return View();
         }
 
-        public JsonResult RegistrarUsuario(string name, string password)
+        [HttpPost]
+        public JsonResult RegistrarUsuario([FromBody] UsuarioDTO usuario)
         {
-                bool registroExitoso = new UserBusiness().RegistrarUsuario(password,name);
+                bool registroExitoso = new UserBusiness().RegistrarUsuario(usuario.pass,usuario.name);
 
                 if (registroExitoso)
                 {
@@ -38,11 +39,16 @@ namespace TortoiseGarden.WebApplication.Controllers
                 }
 
         }
-
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public class UsuarioDTO
+        {
+            public string name { get; set; }
+            public string pass { get; set; }
         }
     }
 }

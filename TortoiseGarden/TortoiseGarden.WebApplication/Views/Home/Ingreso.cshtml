@@ -4,31 +4,30 @@
     Layout = "~/Views/Shared/Ingreso.cshtml";
 }
 
-<div class="containerForm">
+<div id="containerForm" class="containerForm">
     <div id ="ingresarUsuario">
         <label>Nombre de Usuario</label>
-        <input type="text"/>
+        <input id="nameIngreso" type="text"/>
         <label>Constraseña</label>
-        <input type="password"/>
+        <input id="passIngreso" type="password"/>
         <div class="btn-container">
-            <button class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
-            <button class="btn-Registrarme"><a>Registrarme</a></button>
+            <button id="btn-AceptarIngreso" class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
+            <button id="btn-RegistroIngreso" class="btn-Registrarme"><a>Registrarme</a></button>
         </div>
     </div>
 
     <div id ="registrarUsuario">
         <label>Nombre de Usuario</label>
-        <input type="text"/>
+        <input id="nameRegistro" type="text"/>
         <label>Constraseña</label>
-        <input type="password"/>
+        <input id="passRegistro" type="password"/>
         <label>Repetir Constraseña</label>
-        <input type="password"/>
+        <input id="repetirPassRegistro" type="password"/>
         <div class="btn-container">
-            <button class="btn-Cancelar"><a>Cancelar</a></button>
-            <button class="btn-Aceptar"><a href="@Url.Action("Index","Home")">Aceptar</a></button>
+            <button id="btn-CancelarRegistro" class="btn-Cancelar"><a>Cancelar</a></button>
+            <button id="btn-AceptarRegistro" class="btn-Aceptar"><a>Aceptar</a></button>
         </div>
     </div>
 </div>
-
 
 

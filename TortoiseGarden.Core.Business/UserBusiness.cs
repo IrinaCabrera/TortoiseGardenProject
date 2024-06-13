@@ -17,11 +17,12 @@ namespace TortoiseGarden.Core.Business
             ur = new UserRepository();
         }
 
-        public bool RegistrarUsuario(string password, string name)
+        public bool RegistrarUsuario(string pass, string name)
         {
+            //name = "irina1";
             HashHandler Hash = new HashHandler();
             var salt = Hash.GenerarSalt();
-            var hashPass = Convert.ToBase64String(Hash.HashearClave(password, salt));
+            var hashPass = Convert.ToBase64String(Hash.HashearClave(pass, salt));
             var user = new Usuario(name, hashPass, Convert.ToBase64String(salt));
             ur.RegistrarUsuario(user);
 
