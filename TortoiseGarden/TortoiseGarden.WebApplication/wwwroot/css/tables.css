@@ -1,8 +1,6 @@
 ﻿h1 {
     color: darkslategrey;
-    display:fixed;
 }
-
 
 .container {
     max-width: 900px;
@@ -11,10 +9,9 @@
     border-radius: 15px;
     border: 1px dotted white;
     overflow-y: auto;
+    margin-top:5%;
 }
-#containerCompra, #containerVenta {
-    display: none;
-}
+
 table {
     border-collapse: collapse;
     width: 100%;

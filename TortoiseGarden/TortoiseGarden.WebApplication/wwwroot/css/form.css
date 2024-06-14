@@ -1,9 +1,10 @@
 ﻿.containerForm {
     font-size: larger;
-    width: 100%;
+    width: 90%;
     min-height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-content:center;
 }
 .content .containerForm {
     flex-direction: column;
@@ -22,15 +23,34 @@
     color: darkslategrey;
     flex-direction: column;
 }
-.containerForm #registrarCompra {
-    width: 70%;
+.containerForm #registrarCompra , h1{
     margin-top: 5%;
 }
+.containerForm #registrarCompra {
+    width: 70%;
+}
+.primero-container, .segundo-container {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.primero-container label, .segundo-container label{
+    width: 7rem;
+    text-align:end;
+}
+#IdUsuario, #NombreProducto {
+    height: 26px;
+   
+}
+#fecha, #cantidad, #IdUsuario, #NombreProducto {
+    width: 25%;
+}
+
 label {
     margin-top: 5px;
-    
 }
-input {
+input , select{
     border: 2px solid #909E7D;
     margin: 5px 0px;
     padding: 5px;
@@ -80,5 +100,15 @@ a:active {
         width: 70%;
         min-width: 240px;
     }
-    
+    .primero-container, .segundo-container {
+        flex-wrap:wrap;
+    }
+     .primero-container label, .segundo-container label {
+        width: 35%;
+        text-align: end;
+    }
+
+    #fecha, #cantidad, #IdUsuario, #NombreProducto {
+        width: 55%;
+    }
 }

@@ -1,9 +1,7 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Compra";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script src="~/js/compra.js" defer></script>
 <script src="~/js/compra.js" defer></script>
 
 <nav class="navSec">
@@ -12,27 +10,63 @@
             <a id="listarCompra">LISTAR</a>
         </li>
         <li class="navSec-button">
-            <a>AGREGAR</a>
+            <a id="agregarCompra">AGREGAR</a>
         </li>
     </ul>
 </nav>
 <div class ="content">
-        <div id="containerForm" class="containerForm" style="align-items:center">
+    <div id="containerFormCompra" class="containerForm" style="align-items:center">
+        <h1>Compras</h1>
+        <div id="containerCompra" class ="container" >
+            <table id="comprasTable">
+                <thead>
+                    <tr>
+                        <th># Compra</th>
+                        <th>Fecha</th>
+                        <th>Nombre de Producto</th>
+                        <th>Cantidad</th>
+                        <th># Usuario</th>
+                        <th>Nombre de Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="containerFormAgregarCompra" class="containerForm" style="align-items:center">
             <h1>Agregar Compra</h1>
             <div id ="registrarCompra">
-                <label>Nombre de Usuario</label>
-                <input id="nameRegistro" type="text" autocomplete="username"/>
-                <label>Constraseña</label>
-                <input id="passRegistro" type="password" autocomplete="current-password"/>
-                <label>Repetir Constraseña</label>
-                <input id="repetirPassRegistro" type="password" autocomplete="current-password"/>
+                <div class="primero-container">
+                    <label>Usuario</label>
+                    <select multiple id="IdUsuario">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <label>Fecha</label>
+                    <input type="datetime-local" id="fecha"/>
+                </div>
+                <div class="segundo-container">
+                    <label>Producto</label>
+                    <select multiple id="NombreProducto">
+                        <option>Diente de Leon</option>
+                        <option>Hibisco</option>
+                        <option>Brocoli</option>
+                        <option>Rabanito</option>
+                    </select>
+                    <label>Cantidad</label>
+                    <input id="cantidad" type="number"/>
+                </div>
                 <div class="btn-container">
                     <button id="btn-CancelarRegistro" class="btn-Cancelar"><a>Cancelar</a></button>
                     <button id="btn-AceptarRegistro" class="btn-Aceptar"><a>Aceptar</a></button>
                 </div>
             </div>
     </div>
-     
-</div>
+</div>    
+
 
 

@@ -20,18 +20,20 @@
         }
     });
 });
+let content = document.querySelector(".content");
+let containerFormCompra = document.getElementById("containerFormCompra");
+let containerFormAgregarCompra = document.getElementById("containerFormAgregarCompra");
+content.removeChild(containerFormCompra);
+content.removeChild(containerFormAgregarCompra);
 
-let buttonListarCompra = document.getElementById("listarCompra");
-let containerCompra = document.getElementById("containerCompra");
-console.log(buttonListarCompra, containerCompra);
+let btnlistarCompra = document.getElementById("listarCompra");
+let agregarCompra = document.getElementById("agregarCompra");
 
-buttonListarCompra.addEventListener("click",() => {
-    if (containerCompra.style.display === "block") {
-
-        containerCompra.style.display = "none";
-
-    } else {
-        containerCompra.style.display = "block";
-    }
-    
+btnlistarCompra.addEventListener("click", () => {
+    content.appendChild(containerFormCompra);
+    content.removeChild(containerFormAgregarCompra);
+});
+agregarCompra.addEventListener("click", () => {
+    content.appendChild(containerFormAgregarCompra);
+    content.removeChild(containerFormCompra);
 });
