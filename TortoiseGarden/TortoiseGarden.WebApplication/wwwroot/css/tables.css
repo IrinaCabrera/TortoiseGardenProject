@@ -3,6 +3,7 @@
     display:fixed;
 }
 
+
 .container {
     max-width: 900px;
     max-height: 400px;
@@ -10,9 +11,10 @@
     border-radius: 15px;
     border: 1px dotted white;
     overflow-y: auto;
-    visibility:hidden;
 }
-
+#containerCompra, #containerVenta {
+    display: none;
+}
 table {
     border-collapse: collapse;
     width: 100%;

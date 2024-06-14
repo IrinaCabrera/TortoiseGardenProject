@@ -27,12 +27,12 @@ let containerVenta = document.getElementById("containerVenta");
 console.log(buttonListarVenta, containerVenta);
 
 buttonListarVenta.addEventListener("click", () => {
-    if (containerVenta.style.visibility === "visible") {
+    if (containerVenta.style.display === "block") {
 
-        containerVenta.style.visibility = "hidden";
+        containerVenta.style.display = "none";
 
     } else {
-        containerVenta.style.visibility = "visible";
+        containerVenta.style.display = "block";
     }
 
 });

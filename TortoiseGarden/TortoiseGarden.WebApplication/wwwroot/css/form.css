@@ -1,18 +1,16 @@
-﻿body {
-    background-image: url("../Media/chelochilensis.jpg");
-}
-
-.containerForm {
+﻿.containerForm {
     font-size: larger;
-    background-color: rgba(244, 220, 182, 0.3);
     width: 100%;
     min-height: 100%;
     display: flex;
     justify-content: center;
 }
-
+.content .containerForm {
+    flex-direction: column;
+}
 .containerForm #ingresarUsuario,
-.containerForm #registrarUsuario {
+.containerForm #registrarUsuario,
+.containerForm #registrarCompra {
     width: 45%;
     height: 45%;
     border-radius: 15px;
@@ -24,7 +22,10 @@
     color: darkslategrey;
     flex-direction: column;
 }
-
+.containerForm #registrarCompra {
+    width: 70%;
+    margin-top: 5%;
+}
 label {
     margin-top: 5px;
     

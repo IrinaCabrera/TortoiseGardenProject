@@ -26,12 +26,12 @@ let containerCompra = document.getElementById("containerCompra");
 console.log(buttonListarCompra, containerCompra);
 
 buttonListarCompra.addEventListener("click",() => {
-    if (containerCompra.style.visibility === "visible") {
+    if (containerCompra.style.display === "block") {
 
-        containerCompra.style.visibility = "hidden";
+        containerCompra.style.display = "none";
 
     } else {
-        containerCompra.style.visibility = "visible";
+        containerCompra.style.display = "block";
     }
     
 });
