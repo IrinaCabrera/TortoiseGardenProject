@@ -22,17 +22,20 @@
 });
 
 
-let buttonListarVenta = document.getElementById("listarVenta");
-let containerVenta = document.getElementById("containerVenta");
-console.log(buttonListarVenta, containerVenta);
+let content = document.querySelector(".content");
+let containerFormVenta = document.getElementById("containerFormVenta");
+let containerFormAgregarVenta = document.getElementById("containerFormAgregarVenta");
+content.removeChild(containerFormVenta);
+content.removeChild(containerFormAgregarVenta);
 
-buttonListarVenta.addEventListener("click", () => {
-    if (containerVenta.style.display === "block") {
+let btnlistarVenta = document.getElementById("listarVenta");
+let agregarVenta = document.getElementById("agregarVenta");
 
-        containerVenta.style.display = "none";
-
-    } else {
-        containerVenta.style.display = "block";
-    }
-
+btnlistarVenta.addEventListener("click", () => {
+    content.appendChild(containerFormVenta);
+    content.removeChild(containerFormAgregarVenta);
+});
+agregarVenta.addEventListener("click", () => {
+    content.appendChild(containerFormAgregarVenta);
+    content.removeChild(containerFormVenta);
 });

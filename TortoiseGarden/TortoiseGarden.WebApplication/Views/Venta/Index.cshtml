@@ -7,31 +7,64 @@
 <script src="~/js/venta.js" defer></script>
 <nav class="navSec">
     <ul>
-        <li id="listarVenta" class="navSec-button">
-            <a>LISTAR</a>
+        <li class="navSec-button">
+            <a id="listarVenta">LISTAR</a>
         </li>
         <li class="navSec-button">
-            <a>AGREGAR</a>
+            <a id="agregarVenta">AGREGAR</a>
         </li>
     </ul>
 </nav>
 <div class ="content">
-     <div id="containerVenta" class ="container" >
-         <h1>Ventas</h1>
-        <table id="ventasTable">
-            <thead>
-                <tr>
-                    <th># Venta</th>
-                    <th>Fecha</th>
-                    <th>Nombre de Producto</th>
-                    <th>Cantidad</th>
-                    <th># Usuario</th>
-                    <th>Nombre de Usuario</th>
-                </tr>
-            </thead>
-            <tbody>
+     <div id="containerFormVenta" class="containerForm" style="align-items:center">
+        <h1>Ventas</h1>
+        <div id="containerVenta" class ="container" >
+            <table id="ventasTable">
+                <thead>
+                    <tr>
+                        <th># Venta</th>
+                        <th>Fecha</th>
+                        <th>Nombre de Producto</th>
+                        <th>Cantidad</th>
+                        <th># Usuario</th>
+                        <th>Nombre de Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
                
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+         </div>
+    </div>
+    <div id="containerFormAgregarVenta" class="containerForm" style="align-items:center">
+        <h1>Agregar Venta</h1>
+        <div id ="registrarVenta">
+            <div class="primero-container">
+                <label>Usuario</label>
+                <select multiple id="IdUsuario">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <label>Fecha</label>
+                <input type="datetime-local" id="fecha"/>
+            </div>
+            <div class="segundo-container">
+                <label>Producto</label>
+                <select multiple id="NombreProducto">
+                    <option>Diente de Leon</option>
+                    <option>Hibisco</option>
+                    <option>Brocoli</option>
+                    <option>Rabanito</option>
+                </select>
+                <label>Cantidad</label>
+                <input id="cantidad" type="number"/>
+            </div>
+            <div class="btn-container">
+                <button id="btn-CancelarRegistro" class="btn-Cancelar"><a>Cancelar</a></button>
+                <button id="btn-AceptarRegistro" class="btn-Aceptar"><a>Aceptar</a></button>
+            </div>
+        </div>
     </div>
 </div>
