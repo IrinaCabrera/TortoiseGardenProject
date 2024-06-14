@@ -43,21 +43,24 @@ namespace TortoiseGarden.Core.Business
 
         public bool AutenticarUsuario(string pass, string name)
         {
-            bool seEncontro = false;
+
             HashHandler Hash = new HashHandler();
             List<string[]> infoUsr = ur.ObtenerHashSalUsuarios(name);
             
             foreach (var item in infoUsr)
             {
-               var claveHasheada = Hash.HashearClave(pass, Encoding.UTF8.GetBytes(item[1]));
+                byte[] salt = Convert.FromBase64String(item[1]);
+
+                byte[] claveHasheada = Hash.HashearClave(pass, salt);
+               string claveHasheadaString = Convert.ToBase64String(claveHasheada);
                 
-                if (Convert.ToBase64String(claveHasheada) == item[0])
+                if (claveHasheadaString.Equals(item[0]))
                 {
-                    seEncontro = true;
+                    return true;
                 }
-                break;
+                
             }
-            return seEncontro;
+            return false;
         }
 
     }

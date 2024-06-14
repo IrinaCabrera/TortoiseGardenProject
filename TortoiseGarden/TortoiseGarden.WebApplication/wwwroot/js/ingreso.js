@@ -17,6 +17,8 @@ let nameRegistro = document.getElementById("nameRegistro");
 let passRegistro = document.getElementById("passRegistro");
 let repetirPassRegistro = document.getElementById("repetirPassRegistro");
 
+
+
 /*No desplego el formulario de registro.*/
 containerForm.removeChild(contenedorRegistroUsuario);
 
@@ -30,7 +32,6 @@ btnCancelo.addEventListener("click", () => {
     
 });
 btnAceptarRegistro.addEventListener("click", () => {
-    
     const nombre = $('#nameRegistro').val();
     const repetirPass = $('#repetirPassRegistro').val();
     const password = $('#passRegistro').val();
@@ -53,7 +54,27 @@ btnAceptarRegistro.addEventListener("click", () => {
 
     } else {
         console.log("Las contraseñas no coinciden.");
-
     }
 });
 
+btnAceptarIngreso.addEventListener("click", () => {
+
+    const nombre = $('#nameIngreso').val();
+    const password = $('#passIngreso').val();
+
+    console.log(nombre, password);
+
+    jQuery.ajax({
+        url: '/Home/AutenticarUsuario',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ name: nombre, pass: password }),
+        success: function (data) {
+            alert(data.message);
+        },
+        error: function (err) {
+            console.error('Error en la solicitud AJAX:', err);
+        }
+
+    });
+});

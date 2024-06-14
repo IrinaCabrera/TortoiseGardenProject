@@ -39,7 +39,22 @@ namespace TortoiseGarden.WebApplication.Controllers
                 }
 
         }
-        
+        [HttpPost]
+        public JsonResult AutenticarUsuario([FromBody] UsuarioDTO usuario)
+        {
+            bool autenticacionExitosa = new UserBusiness().AutenticarUsuario(usuario.pass, usuario.name);
+
+            if (autenticacionExitosa)
+            {
+                return Json(new { success = true, message = $"Autenticacion exitosa" });
+            }
+            else
+            {
+                return Json(new { success = false, message = $"Error en la autenticación" });
+            }
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

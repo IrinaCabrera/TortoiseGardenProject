@@ -36,9 +36,9 @@ namespace TortoiseGarden.Core.Data
         }
         public List<string[]> ObtenerHashSalUsuarios(string name)
         {
-            List<string[]> infoUsr = new List<string[]>(); 
             using (var db = new TortoiseGardenContext())
             {
+                List<string[]> infoUsr = new List<string[]>();
                 var query = from u in db.Usuarios
                             where u.Nombre == name
                             select new
@@ -49,7 +49,7 @@ namespace TortoiseGarden.Core.Data
                 
                 foreach (var item in query)
                 {
-                    infoUsr.Add([ item.hash, item.salt]);
+                    infoUsr.Add(item: [item.hash, item.salt]);
                 }
 
                 return infoUsr;

@@ -40,11 +40,7 @@ input:focus {
     border-color: darkolivegreen;
     outline: none;
 }
-.btn-container {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-}
+
 button {
     margin: 10px 0px;
     width: 100px;
@@ -57,7 +53,6 @@ button {
 }
 .btn-Registrarme {
     background-color: rgb(185,122,87);
-    
     border: 2px solid white;
 }
 .btn-Cancelar {
@@ -73,10 +68,16 @@ a:visited,
 a:active {
     color: lightgoldenrodyellow;
 }
+.btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
 @media (max-width: 768px) {
-    .containerForm div {
+    .containerForm #ingresarUsuario,
+    .containerForm #registrarUsuario {
         width: 70%;
-        min-width:240px;
-        
+        min-width: 240px;
     }
+    
 }
