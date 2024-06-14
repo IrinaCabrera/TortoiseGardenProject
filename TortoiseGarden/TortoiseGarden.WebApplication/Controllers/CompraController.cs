@@ -17,5 +17,21 @@ namespace TortoiseGarden.WebApplication.Controllers
 
             return Json(compras);
         }
+        public JsonResult ObtenerNombreProducto()
+        {
+            List<string> pNombres=new List<string>();
+            List<object[]> productos = new List<object[]>();
+            ProductBusiness pb = new ProductBusiness();
+            
+            productos = pb.obtenerProductos();
+
+            foreach (var producto in productos)
+            {
+                pNombres.Add(producto[0].ToString());
+            }
+
+
+            return Json(pNombres);
+        }
     }
 }
