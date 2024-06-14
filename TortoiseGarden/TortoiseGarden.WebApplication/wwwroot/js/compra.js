@@ -7,7 +7,8 @@ content.removeChild(containerFormAgregarCompra);
 
 let btnlistarCompra = document.getElementById("listarCompra");
 let agregarCompra = document.getElementById("agregarCompra");
-function RellenarCampos() {
+
+let RellenarCampos = () => {
     /*Campo de UsuarioId*/
         $.ajax({
             url: '/Compra/ObtenerIdUsuarios',
@@ -25,6 +26,8 @@ function RellenarCampos() {
                 console.error('Error', err);
             }
         });
+    /*campo Fecha*/
+    AjustarFecha();
     /*Campo de producto*/
         $.ajax({
             url: '/Compra/ObtenerNombreProducto',
@@ -42,6 +45,18 @@ function RellenarCampos() {
             }
         });
 }
+let AjustarFecha = () => {
+    let inputFecha = document.getElementById("fecha");
+    let ahora = new Date();
+    let sieteDiasAtras = new Date();
+    sieteDiasAtras.setDate(sieteDiasAtras.getDate() - 7);
+    let ahoraISO = ahora.toISOString().split('.')[0];
+
+    inputFecha.setAttribute('min', sieteDiasAtras.toISOString().split('.')[0]);
+    inputFecha.setAttribute('max', ahoraISO);
+}
+
+
 btnlistarCompra.addEventListener("click", () => {
 
     if (content.contains(containerFormAgregarCompra)) {
