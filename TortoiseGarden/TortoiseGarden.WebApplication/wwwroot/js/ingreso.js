@@ -44,7 +44,15 @@ btnAceptarRegistro.addEventListener("click", () => {
             contentType: 'application/json',
             data: JSON.stringify({ name: nombre, pass: password }),
             success: function (data) {
-                alert(data.message);
+                
+                if (data.success) {
+                    
+                    window.location.href = '/Home/Index';
+                } else {
+
+                    window.location.href = '/Home/Ingreso';
+                }
+                console.log(data.message);
             },
             error: function (err) {
                 console.error('Error en la solicitud AJAX:', err);
@@ -62,16 +70,21 @@ btnAceptarIngreso.addEventListener("click", () => {
     const nombre = $('#nameIngreso').val();
     const password = $('#passIngreso').val();
 
-    console.log(nombre, password);
-
     jQuery.ajax({
         url: '/Home/AutenticarUsuario',
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ name: nombre, pass: password }),
         success: function (data) {
-            alert(data.message);
+
+            if (data.success) {
+                window.location.href = '/Home/Index';
+            } else {
+                alert(data.message);
+            }
+            console.log(data.message);
         },
+
         error: function (err) {
             console.error('Error en la solicitud AJAX:', err);
         }
