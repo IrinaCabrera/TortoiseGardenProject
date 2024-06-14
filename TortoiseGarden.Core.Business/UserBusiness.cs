@@ -63,5 +63,9 @@ namespace TortoiseGarden.Core.Business
             return false;
         }
 
+        public List<int> ObtenerIdUsuarios()
+        {
+            return ur.ObtenerIdUsuarios();
+        }
     }
 }

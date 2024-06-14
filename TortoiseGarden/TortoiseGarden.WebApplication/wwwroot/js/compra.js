@@ -9,14 +9,27 @@ let btnlistarCompra = document.getElementById("listarCompra");
 let agregarCompra = document.getElementById("agregarCompra");
 function RellenarCampos() {
     /*Campo de UsuarioId*/
+        $.ajax({
+            url: '/Compra/ObtenerIdUsuarios',
+            method: 'GET',
+            success: function (data) {
+                var select = $('#IdUsuario');
+                select.empty();
+                data.forEach(function (idUsuario) {
+                    var option = $('<option></option>').text(idUsuario);
+                    select.append(option);
+                });
 
+            },
+            error: function (err) {
+                console.error('Error', err);
+            }
+        });
     /*Campo de producto*/
-    $(document).ready(function () {
         $.ajax({
             url: '/Compra/ObtenerNombreProducto',
             method: 'GET',
             success: function (data) {
-                console.log(data);
                 var select = $('#NombreProducto');
                 select.empty();
                 data.forEach(function (producto) {
@@ -28,7 +41,6 @@ function RellenarCampos() {
                 console.error('Error', err);
             }
         });
-    });
 }
 btnlistarCompra.addEventListener("click", () => {
 

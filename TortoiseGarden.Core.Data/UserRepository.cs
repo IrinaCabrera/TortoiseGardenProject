@@ -56,5 +56,21 @@ namespace TortoiseGarden.Core.Data
             }
 
         }
+
+        public List<int> ObtenerIdUsuarios()
+        {
+            using (var bd = new TortoiseGardenContext())
+            {
+                List<int> ids = new List<int>();
+
+                var query = from u in bd.Usuarios
+                            select u.UsuarioId;
+                foreach (var id in query)
+                {
+                    ids.Add(id);
+                }
+                return ids;
+            }
+        }
     }
 }

@@ -17,13 +17,16 @@ namespace TortoiseGarden.WebApplication.Controllers
 
             return Json(compras);
         }
+        public JsonResult ObtenerIdUsuarios()
+        {
+            List<int> ids = new UserBusiness().ObtenerIdUsuarios();
+
+            return Json(ids);
+        }
         public JsonResult ObtenerNombreProducto()
         {
             List<string> pNombres=new List<string>();
-            List<object[]> productos = new List<object[]>();
-            ProductBusiness pb = new ProductBusiness();
-            
-            productos = pb.obtenerProductos();
+            List<object[]> productos = new ProductBusiness().obtenerProductos();
 
             foreach (var producto in productos)
             {
