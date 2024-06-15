@@ -50,10 +50,16 @@ let AjustarFecha = () => {
     let ahora = new Date();
     let sieteDiasAtras = new Date();
     sieteDiasAtras.setDate(sieteDiasAtras.getDate() - 7);
-    let ahoraISO = ahora.toISOString().split('.')[0];
 
-    inputFecha.setAttribute('min', sieteDiasAtras.toISOString().split('.')[0]);
-    inputFecha.setAttribute('max', ahoraISO);
+    ahora.setHours(0, 0, 0, 0);
+    sieteDiasAtras.setHours(0, 0, 0, 0);
+
+    let hoyISO = ahora.toISOString().split('T')[0];
+    let sieteDiasAtrasISO = sieteDiasAtras.toISOString().split('T')[0];
+
+    inputFecha.setAttribute("min", sieteDiasAtrasISO);
+    inputFecha.setAttribute("max", hoyISO);
+
 }
 
 
@@ -95,4 +101,15 @@ agregarCompra.addEventListener("click", () => {
     }
     content.appendChild(containerFormAgregarCompra);
     RellenarCampos();
+
+
+    let AceptarRegistro = document.getElementById("btn-AceptarRegistro");
+    AceptarRegistro.addEventListener("click", () => {
+
+        let fechaSeleccionada = document.getElementById("fecha").value;
+        let ahora = new Date();
+        let horaActual = ahora.toTimeString().split(' ')[0];
+
+    });
 });
+
