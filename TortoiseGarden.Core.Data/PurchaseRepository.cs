@@ -44,5 +44,29 @@ namespace TortoiseGarden.Core.Data
                 return compras;
             }
         }
+
+        public void AgregarCompra(Compra compra)
+        {
+            using (var db = new TortoiseGardenContext())
+            {
+                db.Compras.Add(compra);
+                db.SaveChanges();
+            }
+        }
+
+        public int ObtenerCompraPorId(Compra compra)
+        {
+            using (var db = new TortoiseGardenContext())
+            {
+                var query = from c in db.Compras
+                            where c.ProductoId == compra.ProductoId &&
+                                  c.Cantidad == compra.Cantidad &&
+                                  c.UsuarioId == c.UsuarioId &&
+                                  c.Fecha == c.Fecha
+                            select c.CompraId;
+
+                return query.FirstOrDefault();
+            }
+        }
     }
 }

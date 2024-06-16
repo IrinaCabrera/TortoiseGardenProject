@@ -1,5 +1,4 @@
-﻿
-let content = document.querySelector(".content");
+﻿let content = document.querySelector(".content");
 let containerFormCompra = document.getElementById("containerFormCompra");
 let containerFormAgregarCompra = document.getElementById("containerFormAgregarCompra");
 content.removeChild(containerFormCompra);
@@ -8,7 +7,8 @@ content.removeChild(containerFormAgregarCompra);
 let btnlistarCompra = document.getElementById("listarCompra");
 let agregarCompra = document.getElementById("agregarCompra");
 
-let RellenarCampos = () => {
+let RellenarCampos = (inputFecha) => {
+
     /*Campo de UsuarioId*/
         $.ajax({
             url: '/Compra/ObtenerIdUsuarios',
@@ -26,8 +26,10 @@ let RellenarCampos = () => {
                 console.error('Error', err);
             }
         });
+
     /*campo Fecha*/
-    AjustarFecha();
+    AjustarFecha(inputFecha);
+
     /*Campo de producto*/
         $.ajax({
             url: '/Compra/ObtenerNombreProducto',
@@ -45,8 +47,7 @@ let RellenarCampos = () => {
             }
         });
 }
-let AjustarFecha = () => {
-    let inputFecha = document.getElementById("fecha");
+let AjustarFecha = (inputFecha) => {
     let ahora = new Date();
     let sieteDiasAtras = new Date();
     sieteDiasAtras.setDate(sieteDiasAtras.getDate() - 7);
@@ -94,22 +95,51 @@ btnlistarCompra.addEventListener("click", () => {
 
      
 });
-agregarCompra.addEventListener("click", () => {
 
+agregarCompra.addEventListener("click", () => {
+    
     if (content.contains(containerFormCompra)) {
         content.removeChild(containerFormCompra);
-    }
+    } 
+
     content.appendChild(containerFormAgregarCompra);
-    RellenarCampos();
+    let inputFecha = document.getElementById("fecha");
+    RellenarCampos(inputFecha);
 
+    let btnAceptarCompra = document.getElementById("btn-AceptarRegistro");
 
-    let AceptarRegistro = document.getElementById("btn-AceptarRegistro");
-    AceptarRegistro.addEventListener("click", () => {
+    
 
-        let fechaSeleccionada = document.getElementById("fecha").value;
-        let ahora = new Date();
-        let horaActual = ahora.toTimeString().split(' ')[0];
+    btnAceptarCompra.addEventListener("click", () => {
 
+        let NombreProducto = document.getElementById("NombreProducto").value;
+        let cantidad = document.getElementById("cantidad").value;
+        let idUsuario = document.getElementById("IdUsuario").value;
+        let horaActual = new Date().toTimeString().split(' ')[0];
+        let fechaCompleta = inputFecha.value + 'T' + horaActual;
+
+        let datos = {
+            idUsuario: idUsuario,
+            fecha: fechaCompleta,
+            nombreProducto: NombreProducto,
+            cantidadProducto: cantidad,  
+            
+        };
+        $.ajax({
+            url: '/Compra/AgregarCompra',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(datos),
+            success: function (data) {
+                console.log('Success:', data);
+                
+
+            },
+            error: function (err) {
+                console.log('Error:', err);
+            }
+        });
     });
+    
 });
 

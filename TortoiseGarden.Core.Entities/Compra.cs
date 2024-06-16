@@ -26,6 +26,13 @@ namespace TortoiseGarden.Core.Entities
             Cantidad = cantidad;
             UsuarioId = usuarioId;
         }
+        public Compra(DateTime fecha, int productoId, int cantidad, int usuarioId)
+        {
+            Fecha = fecha;
+            ProductoId = productoId;
+            Cantidad = cantidad;
+            UsuarioId = usuarioId;
+        }
 
     }
 }

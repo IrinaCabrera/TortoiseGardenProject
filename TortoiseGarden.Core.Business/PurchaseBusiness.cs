@@ -20,5 +20,19 @@ namespace TortoiseGarden.Core.Business
         {
             return sr.ObtenerCompras();
         }
+
+        public bool AgregarCompra(Compra compra)
+        {
+            sr.AgregarCompra(compra);
+            
+            if (sr.ObtenerCompraPorId(compra) != 0){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
