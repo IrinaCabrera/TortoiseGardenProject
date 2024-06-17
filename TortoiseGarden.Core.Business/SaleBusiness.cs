@@ -19,6 +19,19 @@ namespace TortoiseGarden.Core.Business
         {
             return sr.ObtenerVentas();
         }
+        public bool AgregarVenta(Venta venta)
+        {
+            sr.AgregarVenta(venta);
+
+            if (sr.ObtenerVentaPorId(venta) != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
     }

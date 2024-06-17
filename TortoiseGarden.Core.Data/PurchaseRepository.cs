@@ -61,8 +61,8 @@ namespace TortoiseGarden.Core.Data
                 var query = from c in db.Compras
                             where c.ProductoId == compra.ProductoId &&
                                   c.Cantidad == compra.Cantidad &&
-                                  c.UsuarioId == c.UsuarioId &&
-                                  c.Fecha == c.Fecha
+                                  c.UsuarioId == compra.UsuarioId &&
+                                  c.Fecha == compra.Fecha
                             select c.CompraId;
 
                 return query.FirstOrDefault();

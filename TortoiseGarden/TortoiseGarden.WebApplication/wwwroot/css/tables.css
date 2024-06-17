@@ -4,7 +4,7 @@
 
 .container {
     max-width: 900px;
-    max-height: 400px;
+    max-height: 250px;
     padding: 1rem;
     border-radius: 15px;
     border: 1px dotted white;
@@ -43,13 +43,13 @@ tbody {
 @media (max-width: 650px) {
     .container {
         max-width: 450px;
-        max-height: 400px;
+        max-height: 300px;
         
     }
 }
 @media (max-width: 450px) {
     .container {
         max-width: 300px;
-        max-height: 400px;
+        max-height: 300px;
     }
 }

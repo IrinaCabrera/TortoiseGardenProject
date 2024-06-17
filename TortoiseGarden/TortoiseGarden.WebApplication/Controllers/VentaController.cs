@@ -18,5 +18,56 @@ namespace TortoiseGarden.WebApplication.Controllers
 
             return Json(ventas);
         }
+
+        public JsonResult ObtenerIdUsuarios()
+        {
+            List<int> ids = new UserBusiness().ObtenerIdUsuarios();
+
+            return Json(ids);
+        }
+        public JsonResult ObtenerNombreProducto()
+        {
+            List<string> pNombres = new List<string>();
+            List<object[]> productos = new ProductBusiness().obtenerProductos();
+
+            foreach (var producto in productos)
+            {
+                pNombres.Add(producto[0].ToString());
+            }
+
+
+            return Json(pNombres);
+        }
+
+        [HttpPost]
+        public JsonResult AgregarVenta([FromBody] AgregarVentaDTO venta)
+        {
+            if (venta == null)
+            {
+                return Json(new { success = false, message = "Faltan campos por rellenar." });
+            }
+
+            int Idproducto = new ProductBusiness().obtenerProductoEspecifico(venta.nombreProducto).ProductoId;
+
+
+            bool registroExitoso = new SaleBusiness().AgregarVenta(new Venta(venta.fecha, Idproducto, venta.cantidadProducto, venta.idUsuario));
+
+            if (registroExitoso)
+            {
+                return Json(new { success = true, message = "Registro exitoso" });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Error al registrar venta." });
+            }
+        }
+        public class AgregarVentaDTO
+        {
+            public int idUsuario { get; set; }
+            public DateTime fecha { get; set; }
+            public string nombreProducto { get; set; }
+            public int cantidadProducto { get; set; }
+
+        }
     }
 }

@@ -49,5 +49,28 @@ namespace TortoiseGarden.Core.Data
             }
         }
 
+        public void AgregarVenta(Venta venta)
+        {
+            using (var db = new TortoiseGardenContext())
+            {
+                db.Ventas.Add(venta);
+                db.SaveChanges();
+            }
+        }
+
+        public int ObtenerVentaPorId(Venta venta)
+        {
+            using (var db = new TortoiseGardenContext())
+            {
+                var query = from v in db.Ventas
+                            where v.ProductoId == venta.ProductoId &&
+                                  v.Cantidad == venta.Cantidad &&
+                                  v.UsuarioId == venta.UsuarioId &&
+                                  v.Fecha == venta.Fecha
+                            select v.VentaId;
+
+                return query.FirstOrDefault();
+            }
+        }
     }
 }
