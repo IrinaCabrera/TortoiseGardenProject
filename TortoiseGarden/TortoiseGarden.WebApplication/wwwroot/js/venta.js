@@ -7,7 +7,7 @@ content.removeChild(containerFormAgregarVenta);
 let btnlistarVenta = document.getElementById("listarVenta");
 let agregarVenta = document.getElementById("agregarVenta");
 
-let RellenarCampos = (inputFecha) => {
+let RellenarCampos = () => {
 
     /*Campo de UsuarioId*/
     $.ajax({
@@ -26,10 +26,6 @@ let RellenarCampos = (inputFecha) => {
             console.error('Error', err);
         }
     });
-
-    /*campo Fecha*/
-    AjustarFecha(inputFecha);
-
     /*Campo de producto*/
     $.ajax({
         url: '/Venta/ObtenerNombreProducto',
@@ -47,20 +43,12 @@ let RellenarCampos = (inputFecha) => {
         }
     });
 }
-let AjustarFecha = (inputFecha) => {
+let AjustarFechaHora = () => {
     let ahora = new Date();
-    let sieteDiasAtras = new Date();
-    sieteDiasAtras.setDate(sieteDiasAtras.getDate() - 7);
-
     ahora.setHours(0, 0, 0, 0);
-    sieteDiasAtras.setHours(0, 0, 0, 0);
-
     let hoyISO = ahora.toISOString().split('T')[0];
-    let sieteDiasAtrasISO = sieteDiasAtras.toISOString().split('T')[0];
-
-    inputFecha.setAttribute("min", sieteDiasAtrasISO);
-    inputFecha.setAttribute("max", hoyISO);
-
+    let horaActual = new Date().toTimeString().split(' ')[0];
+    return hoyISO + 'T' + horaActual;
 }
 
 btnlistarVenta.addEventListener("click", () => {
@@ -96,9 +84,8 @@ agregarVenta.addEventListener("click", () => {
     }
     content.appendChild(containerFormAgregarVenta);
 
-    let inputFecha = document.getElementById("fecha");
-    RellenarCampos(inputFecha);
-
+    RellenarCampos();
+    console.log(AjustarFechaHora());
     let btnAceptarVenta = document.getElementById("btn-AceptarRegistro");
 
     btnAceptarVenta.addEventListener("click", () => {
@@ -106,8 +93,7 @@ agregarVenta.addEventListener("click", () => {
         let NombreProducto = document.getElementById("NombreProducto").value;
         let cantidad = document.getElementById("cantidad").value;
         let idUsuario = document.getElementById("IdUsuario").value;
-        let horaActual = new Date().toTimeString().split(' ')[0];
-        let fechaCompleta = inputFecha.value + 'T' + horaActual;
+        let fechaCompleta = AjustarFechaHora();
 
         let datos = {
             idUsuario: idUsuario,
@@ -116,7 +102,6 @@ agregarVenta.addEventListener("click", () => {
             cantidadProducto: cantidad,
 
         };
-        console.log(datos);
         $.ajax({
             url: '/Venta/AgregarVenta',
             method: 'POST',

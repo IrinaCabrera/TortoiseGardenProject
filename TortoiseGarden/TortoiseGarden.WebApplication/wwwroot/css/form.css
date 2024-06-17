@@ -47,7 +47,12 @@
 #fecha, #cantidad, #IdUsuario, #NombreProducto {
     width: 25%;
 }
-
+#containerFormAgregarVenta .primero-container {
+    justify-content:flex-start;
+}
+#containerFormAgregarVenta .primero-container #IdUsuario {
+    margin-left:6%;
+}
 label {
     margin-top: 5px;
 }
@@ -111,5 +116,11 @@ a:active {
 
     #fecha, #cantidad, #IdUsuario, #NombreProducto {
         width: 55%;
+    }
+    #containerFormAgregarVenta .primero-container {
+        justify-content: space-between;
+    }
+    #containerFormAgregarVenta .primero-container #IdUsuario {
+        margin-left: 0px;
     }
 }
