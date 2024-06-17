@@ -68,5 +68,16 @@ namespace TortoiseGarden.Core.Data
                 return query.FirstOrDefault();
             }
         }
+
+        public int ObtenerCantidadDeProductoCompra(int productoId)
+        {
+            using (var db = new TortoiseGardenContext())
+            {
+                var query = (from c in db.Compras
+                             where c.ProductoId == productoId
+                             select c.Cantidad).Sum();
+                return query;
+            }
+        }
     }
 }

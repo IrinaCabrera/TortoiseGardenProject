@@ -33,6 +33,19 @@ namespace TortoiseGarden.Core.Business
             }
         }
 
+        public int CantidadDisoinibleProducto(string pName)
+        {
+            Producto producto = new ProductBusiness().obtenerProductoEspecifico(pName);
+            int cantidadComprada = new PurchaseBusiness().ObtenerCantidadDeProductoCompra(producto.ProductoId);
+            int cantidadVendida = sr.ObtenerCantidadDeProductoVenta(producto.ProductoId);
+
+            int cantidadDisponible = cantidadComprada - cantidadVendida;
+            if(cantidadDisponible > 0)
+            {
+                return cantidadDisponible;
+            }
+            return 0;
+        }
 
     }
 }

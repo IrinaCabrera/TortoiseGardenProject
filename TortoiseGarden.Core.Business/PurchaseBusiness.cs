@@ -34,5 +34,9 @@ namespace TortoiseGarden.Core.Business
             }
         }
 
+        public int ObtenerCantidadDeProductoCompra(int productoId)
+        {
+            return sr.ObtenerCantidadDeProductoCompra(productoId);
+        }
     }
 }
