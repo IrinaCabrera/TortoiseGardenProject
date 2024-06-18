@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Ingreso";
+    Layout = "~/Views/Shared/Ingreso.cshtml";
+}
+
+<div id="containerForm" class="containerFormIngreso">
+    <div id ="ingresarUsuario">
+        <label>Nombre de Usuario</label>
+        <input id="nameIngreso" type="text" autocomplete="username"/>
+        <label>Constraseña</label>
+        <input id="passIngreso" type="password" autocomplete="current-password"/>
+        <div class="btn-container">
+            <button id="btn-AceptarIngreso" class="btn-Aceptar"><a>Aceptar</a></button>
+            <button id="btn-RegistroIngreso" class="btn-Registrarme"><a>Registrarme</a></button>
+        </div>
+    </div>
+
+    <div id ="registrarUsuario">
+        <label>Nombre de Usuario</label>
+        <input id="nameRegistro" type="text" autocomplete="username"/>
+        <label>Constraseña</label>
+        <input id="passRegistro" type="password" autocomplete="current-password"/>
+        <label>Repetir Constraseña</label>
+        <input id="repetirPassRegistro" type="password" autocomplete="current-password"/>
+        <div class="btn-container">
+            <button id="btn-CancelarRegistro" class="btn-Cancelar"><a>Cancelar</a></button>
+            <button id="btn-AceptarRegistro" class="btn-Aceptar"><a>Aceptar</a></button>
+        </div>
+    </div>
+</div>
+
+
