@@ -69,5 +69,20 @@ namespace TortoiseGarden.WebApplication.Controllers
             public int cantidadProducto { get; set; }
 
         }
+
+        [HttpPost]
+        public JsonResult ObtenerCantidadMaxima([FromBody] string producto)
+        {
+            int cantidadMaxima = new SaleBusiness().CantidadDisoinibleProducto(producto);
+            if (cantidadMaxima > 0)
+            {
+                return Json(cantidadMaxima);
+            }
+            else
+            {
+                return  Json(new { success = false, message = "chale" });
+            }
+            
+        }
     }
 }

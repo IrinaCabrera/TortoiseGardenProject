@@ -1,6 +1,7 @@
 ﻿let content = document.querySelector(".content");
 let containerFormVenta = document.getElementById("containerFormVenta");
 let containerFormAgregarVenta = document.getElementById("containerFormAgregarVenta");
+let cantMaxProducto;
 content.removeChild(containerFormVenta);
 content.removeChild(containerFormAgregarVenta);
 
@@ -50,6 +51,25 @@ let AjustarFechaHora = () => {
     let horaActual = new Date().toTimeString().split(' ')[0];
     return hoyISO + 'T' + horaActual;
 }
+let AjustarCantidad = (nombreProducto) => {
+    
+
+    $.ajax({
+        url: '/Venta/ObtenerCantidadMaxima',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(nombreProducto),
+        success: function (data) {
+            let cantidadProducto = document.getElementById("cantidad");
+            cantMaxProducto = data;
+            console.log('Success:', data);
+            console.log(cantMaxProducto);
+        },
+        error: function (err) {
+            console.error('Error:', err);
+        }
+    });
+}
 
 btnlistarVenta.addEventListener("click", () => {
     if (content.contains(containerFormAgregarVenta)) {
@@ -79,43 +99,58 @@ btnlistarVenta.addEventListener("click", () => {
 
 });
 agregarVenta.addEventListener("click", () => {
+
     if (content.contains(containerFormVenta)) {
         content.removeChild(containerFormVenta);
     }
     content.appendChild(containerFormAgregarVenta);
 
     RellenarCampos();
-    console.log(AjustarFechaHora());
+
     let btnAceptarVenta = document.getElementById("btn-AceptarRegistro");
 
     btnAceptarVenta.addEventListener("click", () => {
-
         let NombreProducto = document.getElementById("NombreProducto").value;
-        let cantidad = document.getElementById("cantidad").value;
-        let idUsuario = document.getElementById("IdUsuario").value;
-        let fechaCompleta = AjustarFechaHora();
+        setTimeout(function () {
+            AjustarCantidad(NombreProducto);
+        }, 3000);
+        setTimeout(function () {
+            let cantidad = document.getElementById("cantidad").value;
+            console.log(cantidad);
+            console.log(cantMaxProducto);
 
-        let datos = {
-            idUsuario: idUsuario,
-            fecha: fechaCompleta,
-            nombreProducto: NombreProducto,
-            cantidadProducto: cantidad,
-
-        };
-        $.ajax({
-            url: '/Venta/AgregarVenta',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(datos),
-            success: function (data) {
-                console.log('Success:', data);
-
-
-            },
-            error: function (err) {
-                console.log('Error:', err);
+            if (cantidad > cantMaxProducto) {
+                cantidad = cantMaxProducto;
             }
-        });
+            console.log(cantidad);
+
+            let idUsuario = document.getElementById("IdUsuario").value;
+            let fechaCompleta = AjustarFechaHora();
+
+            let datos = {
+                idUsuario: idUsuario,
+                fecha: fechaCompleta,
+                nombreProducto: NombreProducto,
+                cantidadProducto: cantidad,
+
+            };
+            console.log(datos);
+            $.ajax({
+                url: '/Venta/AgregarVenta',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(datos),
+                success: function (data) {
+                    console.log('Success:', data);
+
+
+                },
+                error: function (err) {
+                    console.log('Error:', err);
+                }
+            });
+        }, 10000);
+       
     });
     
 });
