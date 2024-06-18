@@ -46,6 +46,9 @@ namespace TortoiseGarden.Core.Business
             }
             return 0;
         }
-
+        public int ObtenerCantidadDeProductoVenta(int productoId)
+        {
+            return sr.ObtenerCantidadDeProductoVenta(productoId);
+        }
     }
 }
