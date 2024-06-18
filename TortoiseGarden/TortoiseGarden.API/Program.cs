@@ -1,6 +1,12 @@
+using TortoiseGarden.Core.Data;
+using TortoiseGarden.Core.Business;
+using TortoiseGarden.Core.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("TortoiseGardenConnectionString");
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
